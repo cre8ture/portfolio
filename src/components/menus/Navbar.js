@@ -6,20 +6,23 @@ import Screenshot from "../utils/Screenshot";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [isGraph, setIsGraph] = useState(true);
 
   function toggleMenu() {
     setShowMenu(!showMenu);
+    setIsGraph(!isGraph);
   }
 
   return (
     <nav className="flex items-center justify-between px-4 py-6">
       <Screenshot />
-      <div
-        className="flex justify-end text-3xl font-mono cursor-pointer transform transition duration-500 hover:rotate-90"
-        onClick={toggleMenu}
-      >
-        <div className="pt-2">[index]</div>
-        <Link href="/table">
+      <Link href={isGraph ? "/table" : "/main"}>
+        <div
+          className="flex justify-end text-3xl font-mono cursor-pointer transform transition duration-500 hover:rotate-90"
+          onClick={toggleMenu}
+        >
+          <div className="pt-2">[index]</div>
+          {/* <Link href="/table"> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,8 +37,9 @@ export default function Navbar() {
               d="M3.75 9h16.5m-16.5 6.75h16.5"
             />
           </svg>
-        </Link>
-      </div>
+          {/* </Link> */}
+        </div>
+      </Link>
 
       {/* {showMenu && (
         // <div className="fixed right-0 top-0 h-full w-2/3 bg-gray-900"></div>
