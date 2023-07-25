@@ -49,7 +49,7 @@ export const llms_nodes = [
   {
     id: "PDF Chatter",
     type: "project_node_norm",
-    position: { x: 1700, y: 1400 },
+    position: { x: 1800, y: 1300 },
     data: {
       title: "PDF Chatter",
       description: "Converse with your documents",
@@ -61,7 +61,7 @@ export const llms_nodes = [
   {
     id: "Diagram Creator",
     type: "project_node_norm",
-    position: { x: 1150, y: 1800 },
+    position: { x: 1550, y: 1500 },
     data: {
       title: "Diagram Creator",
       description:
@@ -86,8 +86,8 @@ export const llms_edges = [
     id: "llms_edge2",
     source: "llms_header",
     // sourceHandle: "source_left"
-    sourceHandle: "right_source",
-    targetHandle: "left_target",
+    sourceHandle: "top_source",
+    targetHandle: "bottom_target",
     // sourcePosition: Position.Right,
     // targetPosition: Position.Left,
     target: "AI Life Coach",
@@ -96,7 +96,7 @@ export const llms_edges = [
     id: "llms_edge3",
     source: "llms_header",
     // sourceHandle: "source_left",
-    sourceHandle: "top_source",
+    sourceHandle: "bottom_source",
     targetHandle: "left_target",
     target: "PDF Chatter",
   },
@@ -104,8 +104,8 @@ export const llms_edges = [
     id: "llms_edge4",
     source: "llms_header",
     // sourceHandle: "source_left",
-    sourceHandle: "top_source",
-    targetHandle: "right_target",
+    sourceHandle: "bottom_source",
+    targetHandle: "top_target",
     target: "Diagram Creator",
   },
 ];
