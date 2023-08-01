@@ -32,7 +32,6 @@ const FallingTextComponent = () => {
           element.style.transform = "translateX(1000px)";
         }
 
-        console.log(elementBottom, bottomOfWindow);
       });
 
       elements2.forEach((element) => {

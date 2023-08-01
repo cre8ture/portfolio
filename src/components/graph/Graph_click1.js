@@ -12,7 +12,7 @@ import CustomControls from "./controls/Controls";
 
 // import { heading_nodes } from "./data/headings";
 
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -82,9 +82,6 @@ const initialNodes = [
                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                Reset Graph
-              </button>
             </p>
           </div>
         </>
@@ -95,9 +92,7 @@ const initialNodes = [
     position: { x: 0, y: 0 },
   },
 ];
-const initialEdges = [
-
-];
+const initialEdges = [];
 
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
@@ -115,15 +110,16 @@ const nodeTypes = {
 let id = 1;
 const getId = () => `${id++}`;
 
-const fitViewOptions = {
-  padding: 3,
-};
+// const fitViewOptions = {
+//   padding: 3,
+// };
 
-const AddNodeOnEdgeDrop = () => {
+const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
   const reactFlowWrapper = useRef(null);
   const connectingNodeId = useRef(null);
-  // const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  // const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [reactFlowInstance, setReactFlowInstance] = useState(null);
+
+  //   const onInit = (instance) => setReactFlowInstance(instance);
   const [nodes, setNodes, onNodesChange] = useNodesState([
     ...initialNodes,
     // ...edtech_nodes,
@@ -182,22 +178,37 @@ const AddNodeOnEdgeDrop = () => {
     [project]
   );
 
+  //   for new new nodes being made
+  const newNodeWidth = 100;
+  const newNodeHeight = 360;
+
   // new nodes on clicking
-  const handlePaneClick = useCallback((event) => {
-    if (event.detail === 2) {
-      const canvas = document.querySelector(".react-flow__renderer");
-      const position = getClickPosition(event, canvas);
-      const newNode = {
-        id: event.timeStamp.toString(),
-        // type: "default",
-        type: "new_node_resize",
-        position,
-        // data: { label: "New Node" },
-        data: { value: 224 },
-      };
-      setNodes((prevData) => [...prevData, newNode]);
-    }
-  }, []);
+  const handlePaneClick = useCallback(
+    (event) => {
+      if (event.detail === 2) {
+        const position = project({
+          //   const position = project({
+          x: event.clientX,
+          y: event.clientY,
+        });
+        console.log("i am position", position);
+        const newNode = {
+          id: event.timeStamp.toString(),
+          // type: "default",
+          type: "new_node_resize",
+          // position,
+          position: {
+            x: position.x - newNodeWidth / 2,
+            y: position.y - newNodeHeight / 2,
+          },
+          // data: { label: "New Node" },
+          data: { value: 224 },
+        };
+        setNodes((prevData) => [...prevData, newNode]);
+      }
+    },
+    [project]
+  );
 
   function getClickPosition(event, canvas) {
     const canvasRect = canvas.getBoundingClientRect();
@@ -205,6 +216,10 @@ const AddNodeOnEdgeDrop = () => {
     const y = event.clientY - canvasRect.top;
     return { x, y };
   }
+  const fitViewOptions = {
+    padding: 50, // Adjust the padding value as needed
+    includeHiddenNodes: true, // Optional: Whether to include hidden nodes when fitting the view
+  };
 
   return (
     // <div style={{ width: "100vw", height: "100vh" }}>
@@ -214,8 +229,12 @@ const AddNodeOnEdgeDrop = () => {
       style={{ width: "100vw", height: "100vh" }}
     >
       <ReactFlow
+        fitView={fitViewOptions}
         nodes={nodes}
         edges={edges}
+        elements={nodes}
+        // onLoad={onLoad}
+        // onInit={onInit}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
@@ -232,8 +251,8 @@ const AddNodeOnEdgeDrop = () => {
         {/* <Controls /> */}
         <CustomControls />
         <MiniMap />
-        {/* <Background variant="dots" gap={12} size={1} /> */}
-        <Background
+        <Background variant="dots" gap={12} size={1} />
+        {/* <Background
           id="1"
           gap={10}
           color="#f1f1f1"
@@ -245,7 +264,7 @@ const AddNodeOnEdgeDrop = () => {
           offset={1}
           color="#ccc"
           variant={BackgroundVariant.Lines}
-        />
+        /> */}
       </ReactFlow>
     </div>
     // </div>

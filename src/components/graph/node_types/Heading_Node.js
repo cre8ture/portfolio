@@ -36,7 +36,7 @@ export function Heading_Node({ data, isConnectable }) {
         {" "}
         Here is a slection of education apps, mindfulness and deep learnings
         experiments I have conducted in 2023. &nbsp;&nbsp;
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           {" "}
           Contact Me!
         </button>{" "}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { edtech_nodes2 } from "../graph/data/edtech";
 import { mindfulness_nodes } from "../graph/data/mindfulness";
+import { deep_learning_nodes } from "../graph/data/ai";
+import { llms_nodes } from "../graph/data/llms";
 import Link from "next/link";
 
 const DownChevron = () => (
@@ -38,7 +40,12 @@ const UpChevron = () => (
 );
 
 export default function InitiateTable() {
-  const allDat = [edtech_nodes2, mindfulness_nodes];
+  const allDat = [
+    edtech_nodes2,
+    mindfulness_nodes,
+    deep_learning_nodes,
+    llms_nodes,
+  ];
   var data = [];
   for (let j = 0; j < allDat.length; j++) {
     for (let i = 1; i < allDat[j].length; i++) {

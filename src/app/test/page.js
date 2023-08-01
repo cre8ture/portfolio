@@ -1,5 +1,5 @@
 "use client";
-import Text from "../../components/animations/Animated_text_func";
+import Text from "../../components/cards/Bio.js";
 
 export default function Home() {
   return (

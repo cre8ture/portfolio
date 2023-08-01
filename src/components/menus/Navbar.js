@@ -2,7 +2,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import Index from "../index/Reg2";
-import Screenshot from "../utils/Screenshot";
+import Tootltip from "../tooltips/Tooltips";
+// import Screenshot from "../utils/Screenshot";
+// import New from "../utils/New";
+import New_Screenshot_Button from "../utils/NewAndScreenshot";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,13 +18,18 @@ export default function Navbar() {
 
   return (
     <nav className="flex items-center justify-between px-4 py-6">
-      <Screenshot />
+      <Tootltip>
+        {" "}
+        <New_Screenshot_Button />{" "}
+      </Tootltip>
       <Link href={isGraph ? "/table" : "/main"}>
         <div
           className="flex justify-end text-3xl font-mono cursor-pointer transform transition duration-500 hover:rotate-90"
           onClick={toggleMenu}
         >
-          <div className="pt-2">[index]</div>
+          <div className="pt-2">
+            {isGraph ? <span>[index]</span> : <span>[graph]</span>}
+          </div>
           {/* <Link href="/table"> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
