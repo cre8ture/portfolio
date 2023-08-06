@@ -11,7 +11,7 @@ export const creative_nodes = [
   {
     id: "creative_header",
     type: "project_node_norm",
-    position: { x: 800, y: 1500 },
+    position: { x: 1100, y: 2100 },
     data: {
       title: "Other",
       description: "",
@@ -23,7 +23,7 @@ export const creative_nodes = [
   {
     id: "AWS Serverless Lambda Function",
     type: "project_node_norm",
-    position: { x: 200, y: 1200 },
+    position: { x: 400, y: 2000 },
     data: {
       title: "AWS Serveless Lambda Function",
       description:
@@ -37,7 +37,7 @@ export const creative_nodes = [
   {
     id: "Creature in the City",
     type: "project_node_norm",
-    position: { x: 200, y: 1400 },
+    position: { x: 1000, y: 2300 },
     data: {
       title: "Creature in the City",
       description: "Solo performance of my work at Roulette in Brooklyn",
@@ -49,11 +49,10 @@ export const creative_nodes = [
   {
     id: "Impossible Dance",
     type: "project_node_norm",
-    position: { x: 200, y: 1700 },
+    position: { x: 400, y: 2300 },
     data: {
       title: "Impossible Dance",
-      description:
-        "Improvisation based on Melinda Ring's Impossible Dance",
+      description: "Improvisation based on Melinda Ring's Impossible Dance",
       isConnectable: true,
       link: "https://vimeo.com/148194108?utm_campaign=5250933&utm_source=affiliate&utm_channel=affiliate&cjevent=95f2658e2e4411ee809202310a82b82a&clickid=95f2658e2e4411ee809202310a82b82a",
     },
@@ -65,24 +64,21 @@ export const creative_nodes = [
     position: { x: 620, y: 1770 },
     data: {
       title: "Creature on the Dock",
-      description:
-        "Creature series on a dock in Vermont",
+      description: "Creature series on a dock in Vermont",
       isConnectable: true,
       link: "https://www.youtube.com/watch?v=EkU9oVNoBqQ",
     },
     // ...nodeDefaults,
   },
   {
-    id: "Engless Loop",
+    id: "Endless Loop",
     type: "project_node_norm",
     position: { x: 1020, y: 1770 },
     data: {
       title: "Endless Loop",
-      description:
-        "Creature series Endless Loop at Judson Memorial Church",
+      description: "Creature series Endless Loop at Judson Memorial Church",
       isConnectable: true,
-      link: "https://www.youtube.com/watch?v=Ocw_3ksBj0U&list=UUcllGY-SS0MDaRfZQhI3pAA&index=57
-      ",
+      link: "https://www.youtube.com/watch?v=Ocw_3ksBj0U&list=UUcllGY-SS0MDaRfZQhI3pAA&index=57",
     },
     // ...nodeDefaults,
   },
@@ -90,26 +86,23 @@ export const creative_nodes = [
   {
     id: "Creature on the Porch",
     type: "project_node_norm",
-    position: { x: 720, y: 1770 },
+    position: { x: 1420, y: 1770 },
     data: {
       title: "Creature on the Porch",
-      description:
-        "Creature series on a porch in Vermont with Brubeck",
+      description: "Creature series on a porch in Vermont with Brubeck",
       isConnectable: true,
       link: "https://www.youtube.com/watch?v=irEwoGN6I-s&t=103s",
     },
     // ...nodeDefaults,
   },
 
-
   {
     id: "atrain",
     type: "project_node_norm",
-    position: { x: 1020, y: 2070 },
+    position: { x: 1420, y: 2070 },
     data: {
       title: "atrain",
-      description:
-        "Creature series at the NY Transit Museum",
+      description: "Creature series at the NY Transit Museum",
       isConnectable: true,
       link: "https://vimeo.com/97986774",
     },
@@ -117,7 +110,7 @@ export const creative_nodes = [
   },
 ];
 
-export const deep_learning_edges = [
+export const creative_edges = [
   {
     id: "creative_edge1",
     source: "creative_header",
@@ -129,29 +122,37 @@ export const deep_learning_edges = [
     target: "AWS Serveless Lambda Function",
   },
   {
-    id: "creative_edge2",
+    id: "creative_edge21",
     source: "creative_header",
     // sourceHandle: "source_bottom",
     sourceHandle: "left_source",
     targetHandle: "right_target",
+    target: "AWS Serverless Lambda Function",
+  },
+  {
+    id: "creative_edge2",
+    source: "creative_header",
+    // sourceHandle: "source_bottom",
+    sourceHandle: "top_source",
+    targetHandle: "bottom_target",
     target: "Creature on the Porch",
   },
   {
     id: "creative_edge3",
     source: "creative_header",
     // sourceHandle: "source_left",
-    sourceHandle: "left_source",
-    targetHandle: "right_target",
-    target: "Creature in the City",
-  },
-  {
-    id: "creative_edge4",
-    source: "creative_header",
-    // sourceHandle: "source_left",
     sourceHandle: "bottom_source",
     targetHandle: "top_target",
-    target: "VitGan",
+    target: "Creature in the City",
   },
+  // {
+  //   id: "creative_edge4",
+  //   source: "creative_header",
+  //   // sourceHandle: "source_left",
+  //   sourceHandle: "bottom_source",
+  //   targetHandle: "top_target",
+  //   target: "VitGan",
+  // },
   {
     id: "dcreative_edge5",
     source: "creative_header",
@@ -164,24 +165,24 @@ export const deep_learning_edges = [
     id: "creative_edge6",
     source: "creative_header",
     // sourceHandle: "source_left",
-    sourceHandle: "bottom_source",
-    targetHandle: "top_target",
+    sourceHandle: "left_source",
+    targetHandle: "bottom_target",
     target: "Creature on the Dock",
   },
   {
     id: "creative_edge7",
     source: "creative_header",
     // sourceHandle: "source_left",
-    sourceHandle: "bottom_source",
-    targetHandle: "top_target",
+    sourceHandle: "top_source",
+    targetHandle: "bottom_target",
     target: "Endless Loop",
   },
   {
     id: "creative_edge8",
     source: "creative_header",
     // sourceHandle: "source_left",
-    sourceHandle: "bottom_source",
-    targetHandle: "top_target",
+    sourceHandle: "right_source",
+    targetHandle: "left_target",
     target: "atrain",
   },
 ];

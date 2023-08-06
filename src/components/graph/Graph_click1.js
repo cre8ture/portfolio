@@ -8,6 +8,8 @@ import { edtech_nodes2, edtech_edges2 } from "./data/edtech";
 import { mindfulness_nodes, mindfulness_edges } from "./data/mindfulness";
 import { deep_learning_nodes, deep_learning_edges } from "./data/ai";
 import { llms_nodes, llms_edges } from "./data/llms";
+import { creative_nodes, creative_edges } from "./data/creative";
+
 import CustomControls from "./controls/Controls";
 
 // import { heading_nodes } from "./data/headings";
@@ -127,6 +129,7 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
     ...edtech_nodes2,
     ...deep_learning_nodes,
     ...llms_nodes,
+    ...creative_nodes,
     // ...heading_nodes,
 
     // ...info_nodes,
@@ -138,6 +141,7 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
     ...edtech_edges2,
     ...deep_learning_edges,
     ...llms_edges,
+    ...creative_edges,
   ]);
 
   const { project } = useReactFlow();
