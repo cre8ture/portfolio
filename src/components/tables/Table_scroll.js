@@ -106,7 +106,7 @@ const DataTable = ({ data }) => {
 
   const getCategoryColor = (category) => {
     switch (category) {
-      case "edtech":
+      case "Edtech":
         return "bg-blue-500";
       case "mindfulness":
         return "bg-green-500";
@@ -187,7 +187,8 @@ const DataTable = ({ data }) => {
             <td className="border px-4 py-2">{item.description}</td>
             <td className="border px-4 py-2">
               <div
-                className={`inline-block rounded-full text-white px-2 py-1 text-xs font-bold mr-3 ${getCategoryColor(
+                // className={`inline-block rounded-full text-white p-1 py-2 text-xs font-bold ${getCategoryColor(
+                className={`inline-block text-white p-1 py-2 text-xs font-bold ${getCategoryColor(
                   item.category
                 )}`}
               >

@@ -14,7 +14,8 @@ export default function Navbar() {
       <div className="text-xl font-bold"></div>
 
       <div
-        className="text-3xl cursor-pointercursor-pointer transform transition duration-500 hover:rotate-90"
+        // className="text-3xl cursor-pointercursor-pointer transform transition duration-500 hover:rotate-90"
+        className="text-3xl cursor-pointercursor-pointer transform transition duration-500 hover:scale(1.1)"
         onClick={toggleMenu}
       >
         <svg
