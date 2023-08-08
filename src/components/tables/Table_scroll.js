@@ -3,6 +3,8 @@ import { edtech_nodes2 } from "../graph/data/edtech";
 import { mindfulness_nodes } from "../graph/data/mindfulness";
 import { deep_learning_nodes } from "../graph/data/ai";
 import { llms_nodes } from "../graph/data/llms";
+import { creative_nodes } from "../graph/data/creative";
+
 import Link from "next/link";
 
 const DownChevron = () => (
@@ -45,6 +47,7 @@ export default function InitiateTable() {
     mindfulness_nodes,
     deep_learning_nodes,
     llms_nodes,
+    creative_nodes,
   ];
   var data = [];
   for (let j = 0; j < allDat.length; j++) {
@@ -106,16 +109,16 @@ const DataTable = ({ data }) => {
 
   const getCategoryColor = (category) => {
     switch (category) {
-      case "Edtech":
-        return "bg-blue-500";
-      case "mindfulness":
-        return "bg-green-500";
-      case "artificial intelligence":
+      case "Ed Tech":
+        return "bg-blue-400";
+      case "Mindfulness":
+        return "bg-lime-500";
+      case "Deep Learning":
+        return "bg-pink-500";
+      case "Other":
         return "bg-purple-500";
-      case "movement":
-        return "bg-red-500";
-      case "music":
-        return "bg-yellow-500";
+      case "Large Language Models":
+        return "bg-cyan-500";
       default:
         return "bg-gray-500";
     }

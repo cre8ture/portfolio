@@ -24,7 +24,6 @@ const TechAcquisitions = ({ data, isConnectable }) => {
         id="bottom_source"
         type="source"
         position={Position.Bottom}
-        id="bottom_source"
         className="Bottom-s"
         isConnectable={isConnectable}
       />

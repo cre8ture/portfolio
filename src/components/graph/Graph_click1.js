@@ -38,7 +38,7 @@ const initialNodes = [
   {
     id: "node_2_info",
     type: "Heading_Node",
-    position: { x: 500, y: -80 },
+    position: { x: 500, y: -150 },
     data: { value: 123 },
   },
 

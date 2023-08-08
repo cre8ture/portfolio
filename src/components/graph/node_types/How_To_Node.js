@@ -37,7 +37,7 @@ export function How_To_Node({ data, isConnectable }) {
         it and press backspace. You can{" "}
         <strong className="font-semibold">add your own nodes</strong> by double
         clicking anywhere. Drag point indicators on a node to connect them. Edit
-        this page and{" "}
+        this page and 
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block mx-2">
           Click here to Download this Map
         </button>{" "}
