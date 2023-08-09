@@ -87,6 +87,8 @@ const AddNodeOnEdgeDrop = () => {
   );
 };
 
+AddNodeOnEdgeDrop.displayName = "AddNodeOnEdgeDrop"; // Add this line to set the display name
+
 export default () => (
   <ReactFlowProvider>
     <AddNodeOnEdgeDrop />

@@ -248,7 +248,6 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
         // fitViewOptions={fitViewOptions}
         zoomOnDoubleClick={false}
         onPaneClick={handlePaneClick}
-        zoomOnDoubleClick={false}
         // style={rfStyle} // light blue background
         nodeTypes={nodeTypes}
       >
@@ -274,6 +273,8 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
     // </div>
   );
 };
+
+AddNodeOnEdgeDrop.displayName = "AddNodeOnEdgeDrop"; // Add this line to set the display name
 
 export default () => (
   <ReactFlowProvider>
