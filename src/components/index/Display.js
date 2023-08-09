@@ -4,6 +4,7 @@ import AnimatedText from "../animations/Animated_text_final";
 import Typing from "../typing/Typing";
 import { mission } from "../writing/mission";
 import Bio from "../../components/cards/Bio.js";
+import Footer from "../footer/Footer";
 // import Text from "../animations/Test_Animated";
 
 import Table from "../tables/Table_scroll";
@@ -92,6 +93,8 @@ const AnimatedComponent = () => {
         ))}
         <br />
         <Table />
+        <br />
+        <Footer />
       </div>
     </div>
   );
