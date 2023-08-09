@@ -245,7 +245,7 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
         onConnectStart={onConnectStart}
         onConnectEnd={onConnectEnd}
         // fitView
-        fitViewOptions={fitViewOptions}
+        // fitViewOptions={fitViewOptions}
         zoomOnDoubleClick={false}
         onPaneClick={handlePaneClick}
         zoomOnDoubleClick={false}

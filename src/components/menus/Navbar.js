@@ -108,7 +108,8 @@ export default function Navbar() {
         {" "}
         <New_Screenshot_Button />{" "}
       </Tootltip>
-      <Link href={"/" + linkText}>
+      {/* <Link href={"/" + linkText}> */}
+      <Link href={isGraph ? "/" : "/graph"}>
         <div
           // className="flex justify-end text-3xl font-mono cursor-pointer transform transition duration-500 hover:rotate-90"
           className="flex justify-end text-3xl font-mono cursor-pointer transform transition duration-500 hover:scale-110"
