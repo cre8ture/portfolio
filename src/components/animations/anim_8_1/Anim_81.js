@@ -125,7 +125,7 @@ const FallingTextComponent = ({ text }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const elements = containerRef.current.querySelectorAll(".word");
+      const elements = containerRef.current?.querySelectorAll(".word");
       const windowCenterX = window.innerWidth / 4;
 
       elements.forEach((element) => {

@@ -34,7 +34,7 @@ const FallingTextComponent = ({ text }) => {
         //   element.style.transform = "translateX(1000px)";
         // }
 
-        console.log(elementBottom, bottomOfWindow);
+        // console.log(elementBottom, bottomOfWindow);
       });
 
       elements2.forEach((element) => {
@@ -52,7 +52,7 @@ const FallingTextComponent = ({ text }) => {
 
         if (elementBottom >= bottomOfWindow - 10) {
           element.style.transform = "translateX(1000px)";
-          console.log("i am scroll BOTT");
+          // console.log("i am scroll BOTT");
         }
         if (elementTop >= bottomOfWindow) {
           element.style.transform = "translateX(1000px)";
