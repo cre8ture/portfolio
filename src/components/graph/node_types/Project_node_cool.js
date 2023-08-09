@@ -37,7 +37,7 @@ const CoolFeature = ({
         <p className="text-gray-600">{data.description}</p>
         {data?.buttons?.map((button, index) => (
           <div>
-            <a href={button.link} target="_blank">
+            <a href={button.link} key={index} target="_blank">
               <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-pink-500 hover:border-transparent rounded">
                 {button.title}
               </button>
@@ -50,7 +50,6 @@ const CoolFeature = ({
         id="bottom_source"
         type="source"
         position={Position.Bottom}
-        id="bottom_source"
         className="Bottom-s"
         isConnectable={isConnectable}
       />

@@ -29,7 +29,7 @@ export function How_To_Node({ data, isConnectable }) {
         isConnectable={isConnectable}
       />
       <h5 className="text-lg font-semibold">This site is editable:</h5>
-      <h4 className="text-lg font-semibold">hi 👋 I'm Kai Kleinbard</h4>
+      <h4 className="text-lg font-semibold">hi 👋 Hi, I&apos;m Kai Kleinbard</h4>
       <p className="mt-2">
         This is a selection of some of my experiments. This website is
         completely editable. You can{" "}

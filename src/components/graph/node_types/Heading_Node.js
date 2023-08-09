@@ -29,9 +29,10 @@ export function Heading_Node({ data, isConnectable }) {
         isConnectable={isConnectable}
       />
       <h4 className="font-bold">
-        Hi, I'm Kai Kleinbard, a technologist exploring the intersection of
+        Hi, I&apos;m Kai Kleinbard, a technologist exploring the intersection of
         somatics and artificial intelligence{" "}
       </h4>
+
       <p className="mt-2 text-xl">
         {" "}
         Here is a slection of education apps, mindfulness and deep learnings

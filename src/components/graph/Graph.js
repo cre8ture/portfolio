@@ -13,7 +13,6 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  
 } from "reactflow";
 // NODES`
 import TextUpdaterNode from "./TextUpdaterNode.js";
@@ -73,11 +72,15 @@ const initialNodes = [
     selectable: true,
     position: { x: 0, y: 0 },
   },
-
 ];
 const initialEdges = [
-  { id: "e1-2", source: "node_1_info", target: "node_2_info"    sourceHandle: 'bottom',
-  targetHandle: 'left', },
+  {
+    id: "e1-2",
+    source: "node_1_info",
+    target: "node_2_info",
+    sourceHandle: "bottom",
+    targetHandle: "left",
+  },
 ];
 
 // we define the nodeTypes outside of the component to prevent re-renderings

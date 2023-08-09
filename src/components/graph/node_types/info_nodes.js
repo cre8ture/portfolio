@@ -13,7 +13,7 @@ export const info_nodes = [
     data: {
       label: (
         <>
-          <h4>hi 👋 I'm Kai Kleinbard</h4>
+          <h4>hi 👋 I&apos;m Kai Kleinbard</h4>
           <p> This is a selection of some of my experiments</p>
           <p>
             This website is completely editable. You can <strong>delete</strong>{" "}

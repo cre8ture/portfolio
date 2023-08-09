@@ -14,9 +14,10 @@ const ResizableNodeSelected = ({ data, selected, isConnectable }) => {
           minWidth={100}
           minHeight={100}
         />
-        <Handle type="target" position={Position.Left} />
+        <Handle id="left_targ" type="target" position={Position.Left} />
         <div style={{ padding: 10 }}>{data.label}</div>
         <Handle
+          id="top_targ"
           type="target"
           position={Position.Top}
           isConnectable={isConnectable}
