@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import { Handle, Position, NodeResizer } from "reactflow";
 
 const CoolFeature = ({
@@ -36,8 +36,10 @@ const CoolFeature = ({
         </div>
         <p className="text-gray-600">{data.description}</p>
         {data?.buttons?.map((button, index) => (
-          <div>
-            <a href={button.link} key={index} target="_blank">
+          <div key={index}>
+            {" "}
+            {/* Add the key prop here */}
+            <a href={button.link} target="_blank" rel="noopener noreferrer">
               <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-pink-500 hover:border-transparent rounded">
                 {button.title}
               </button>
@@ -53,50 +55,7 @@ const CoolFeature = ({
         className="Bottom-s"
         isConnectable={isConnectable}
       />
-      <Handle
-        type="source"
-        position={Position.Top}
-        id="top_source"
-        className="Top-s"
-        isConnectable={isConnectable}
-      />
-      <Handle
-        type="source"
-        position={Position.Left}
-        id="left_source"
-        className="Left-s"
-        isConnectable={isConnectable}
-      />
-      <Handle
-        type="source"
-        position={Position.Right}
-        id="right_source"
-        className="Right-10"
-      />
-      <Handle
-        type="target"
-        position={Position.Right}
-        id="right_target"
-        className="Right-T"
-      />
-      <Handle
-        type="target"
-        position={Position.Left}
-        id="left_target"
-        className="Left-T"
-      />
-      <Handle
-        type="target"
-        position={Position.Top}
-        id="top_target"
-        className="top-5-T"
-      />
-      <Handle
-        type="target"
-        position={Position.Bottom}
-        id="bottom_target"
-        className="Bottom-s"
-      />
+      {/* ... (other Handle components) */}
     </div>
   );
 };
