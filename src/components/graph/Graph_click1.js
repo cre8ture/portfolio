@@ -274,10 +274,18 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
   );
 };
 
-AddNodeOnEdgeDrop.displayName = "AddNodeOnEdgeDrop"; // Add this line to set the display name
+// AddNodeOnEdgeDrop.displayName = "AddNodeOnEdgeDrop"; // Add this line to set the display name
 
-export default () => (
+// export default () => (
+//   <ReactFlowProvider>
+//     <AddNodeOnEdgeDrop />
+//   </ReactFlowProvider>
+// );
+
+const MyComponent = () => (
   <ReactFlowProvider>
     <AddNodeOnEdgeDrop />
   </ReactFlowProvider>
 );
+MyComponent.displayName = "MyComponent";
+export default MyComponent;
