@@ -221,7 +221,7 @@ const AddNodeOnEdgeDrop = ({ setIsClearGraph }) => {
     return { x, y };
   }
   const fitViewOptions = {
-    padding: 200, // Adjust the padding value as needed
+    padding: 500, // Adjust the padding value as needed
     includeHiddenNodes: true, // Optional: Whether to include hidden nodes when fitting the view
   };
 

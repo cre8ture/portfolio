@@ -147,60 +147,62 @@ const DataTable = ({ data }) => {
   };
 
   return (
-    <table className="w-full text-left data-table">
-      <thead>
-        <tr>
-          <th
-            className="px-4 py-2 cursor-pointer"
-            onClick={() => handleSort("title")}
-          >
-            Name {getChevronIcon("title")}
-          </th>
-          <th
-            className="px-4 py-2 cursor-pointer"
-            onClick={() => handleSort("description")}
-          >
-            Description {getChevronIcon("description")}
-          </th>
-          <th
-            className="px-4 py-2 cursor-pointer"
-            onClick={() => handleSort("category")}
-          >
-            Category {getChevronIcon("category")}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {sortedData.map((item, index) => (
-          <tr
-            key={index}
-            className={`data-row hover:bg-blue-800 transform hover:scale-110 ${
-              isVisible ? "slide-in" : "slide-out"
-            }`}
-            style={{
-              transition: `transform 0.5s ease-out ${index * 0.1}s`,
-              transform: isVisible ? "translateX(0)" : "translateX(-100%)",
-              cursor: "pointer",
-            }}
-            onClick={() => handleRowClick(item.link)}
-          >
-            <td className="border px-4 py-2">
-              <Link href={item.link}>{item.title}</Link>
-            </td>
-            <td className="border px-4 py-2">{item.description}</td>
-            <td className="border px-4 py-2">
-              <div
-                // className={`inline-block rounded-full text-white p-1 py-2 text-xs font-bold ${getCategoryColor(
-                className={`inline-block text-white p-1 py-2 text-xs font-bold ${getCategoryColor(
-                  item.category
-                )}`}
-              >
-                {item.category}
-              </div>
-            </td>
+    <div className="p-5">
+      <table className="w-full text-left data-table">
+        <thead>
+          <tr>
+            <th
+              className="px-1 py-2 cursor-pointer"
+              onClick={() => handleSort("title")}
+            >
+              Name {getChevronIcon("title")}
+            </th>
+            <th
+              className="px-1 py-2 cursor-pointer"
+              onClick={() => handleSort("description")}
+            >
+              Description {getChevronIcon("description")}
+            </th>
+            <th
+              className="px-1 py-2 cursor-pointer"
+              onClick={() => handleSort("category")}
+            >
+              Type {getChevronIcon("category")}
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sortedData.map((item, index) => (
+            <tr
+              key={index}
+              className={`data-row hover:bg-blue-800 transform hover:scale-110 ${
+                isVisible ? "slide-in" : "slide-out"
+              }`}
+              style={{
+                transition: `transform 0.5s ease-out ${index * 0.1}s`,
+                transform: isVisible ? "translateX(0)" : "translateX(-100%)",
+                cursor: "pointer",
+              }}
+              onClick={() => handleRowClick(item.link)}
+            >
+              <td className="border px-4 py-2">
+                <Link href={item.link}>{item.title}</Link>
+              </td>
+              <td className="border px-4 py-2">{item.description}</td>
+              <td className="border px-4 py-2">
+                <div
+                  // className={`inline-block rounded-full text-white p-1 py-2 text-xs font-bold ${getCategoryColor(
+                  className={`inline-block text-white p-1 py-2 text-xs font-bold ${getCategoryColor(
+                    item.category
+                  )}`}
+                >
+                  {item.category}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };

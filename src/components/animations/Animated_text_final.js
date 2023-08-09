@@ -27,7 +27,7 @@ const FallingTextComponent = ({ text }) => {
         if (elementTop >= bottomOfWindow) {
           element.style.transform = "translateX(-1000px)";
         }
-        if (elementBottom + 100 >= window.innerHeight) {
+        if (elementBottom + 50 >= window.innerHeight) {
           element.style.transform = "translateX(-1000px)";
         }
         // if (elementTop - 30 <= 0) {
@@ -57,7 +57,7 @@ const FallingTextComponent = ({ text }) => {
         if (elementTop >= bottomOfWindow) {
           element.style.transform = "translateX(1000px)";
         }
-        if (elementBottom + 100 >= window.innerHeight) {
+        if (elementBottom + 50 >= window.innerHeight) {
           element.style.transform = "translateX(1000px)";
         }
         // if (elementTop - 30 <= 0) {
