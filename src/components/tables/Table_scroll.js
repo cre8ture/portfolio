@@ -4,6 +4,7 @@ import { mindfulness_nodes } from "../graph/data/mindfulness";
 import { deep_learning_nodes } from "../graph/data/ai";
 import { llms_nodes } from "../graph/data/llms";
 import { creative_nodes } from "../graph/data/creative";
+import { creative_coding_nodes } from "../graph/data/creative_coding";
 
 import Link from "next/link";
 
@@ -48,6 +49,7 @@ export default function InitiateTable() {
     deep_learning_nodes,
     llms_nodes,
     creative_nodes,
+    creative_coding_nodes,
   ];
   var data = [];
   for (let j = 0; j < allDat.length; j++) {
@@ -117,6 +119,8 @@ const DataTable = ({ data }) => {
         return "bg-pink-500";
       case "Other":
         return "bg-purple-500";
+      case "Creative Coding":
+        return "bg-orange-400";
       case "Large Language Models":
         return "bg-cyan-500";
       default:
