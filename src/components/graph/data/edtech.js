@@ -60,7 +60,32 @@ export const edtech_nodes2 = [
       title: "StudyDuck",
       description: "Turn any textbook into a SparkNotes-like study set",
       isConnectable: true,
-      link: "studyduck.io",
+      link: "https://main.d2fwq3nd7k27zn.amplifyapp.com/",
+    },
+    ...nodeDefaults,
+  },
+  {
+    id: "Transcribe Lectures",
+    type: "project_node_norm",
+    position: { x: 1075, y: 350 },
+    data: {
+      title: "Transcribe Lectures",
+      description:
+        "Transcribe audio directly into text and ask an LLM questions about",
+      isConnectable: true,
+      link: "https://transcriber-ten.vercel.app/",
+    },
+    ...nodeDefaults,
+  },
+  {
+    id: "College App Helper",
+    type: "project_node_norm",
+    position: { x: 1150, y: 600 },
+    data: {
+      title: "College App Helper",
+      description: "Let AI analyze your admissions application writing",
+      isConnectable: true,
+      link: "https://app-check.vercel.app/",
     },
     ...nodeDefaults,
   },
@@ -100,6 +125,22 @@ export const edtech_edges2 = [
     sourceHandle: "top_source",
     targetHandle: "right_target",
     target: "StudyDuck",
+  },
+  {
+    id: "edtech_edge5",
+    source: "ed_header",
+    // sourceHandle: "source_left",
+    sourceHandle: "top_source",
+    targetHandle: "right_target",
+    target: "Transcribe Lectures",
+  },
+  {
+    id: "edtech_edge5",
+    source: "ed_header",
+    // sourceHandle: "source_left",
+    sourceHandle: "top_source",
+    targetHandle: "right_target",
+    target: "College App Helper",
   },
 ];
 

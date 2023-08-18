@@ -29,7 +29,7 @@ export const llms_nodes = [
       description:
         "Using Motivational Interviewing as a protocal for an AI life coach",
       isConnectable: true,
-      link: "https://www.thebodyliterate.com/",
+      link: "https://streaming-chat-gamma.vercel.app/",
     },
     ...nodeDefaults,
   },
@@ -42,7 +42,7 @@ export const llms_nodes = [
       description:
         "Talk to different therapists from Freud, Beck, Perls, Calkins...",
       isConnectable: true,
-      link: "https://aquamarine-sorbet-3ee281.netlify.app/",
+      link: "https://be-a-therapist.vercel.app/",
     },
     ...nodeDefaults,
   },
@@ -54,7 +54,7 @@ export const llms_nodes = [
       title: "PDF Chatter",
       description: "Converse with your documents",
       isConnectable: true,
-      link: "https://scholar-8zcz.vercel.app/ ",
+      link: "https://talk-to-pdf-alpha.vercel.app/",
     },
     ...nodeDefaults,
   },
