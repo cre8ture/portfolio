@@ -67,7 +67,7 @@ export const llms_nodes = [
       description:
         "Image generator to create education diagrams (Work In Progress)",
       isConnectable: true,
-      link: "studyduck.io",
+      link: "https://ai-graph3-fvcfgsm18-cre8ture.vercel.app/",
     },
     ...nodeDefaults,
   },
