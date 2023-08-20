@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 
 const ImageSplitter = ({ src }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isSplit, setIsSplit] = useState(false);
 
   const handleScroll = () => {
     const componentTop = document
       .getElementById("image-splitter")
       .getBoundingClientRect().top;
-    // You can adjust the threshold as needed for when the image should split
-    const splitThreshold = 20;
-    setIsVisible(componentTop < splitThreshold);
+    const splitThreshold = 50;
+    setIsSplit(componentTop < splitThreshold);
   };
 
-  // Attach and detach scroll event listener when the component mounts/unmounts
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -20,17 +18,24 @@ const ImageSplitter = ({ src }) => {
     };
   }, []);
 
+  const getRandomTranslation = (min, max) => {
+    return Math.random() * (max - min) + min;
+  };
+
   const pieceStyle = (isRight) => ({
     backgroundImage: `url(${src})`,
     backgroundSize: "200% 200%",
+    // backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    paddingTop: "50%",
+    paddingTop: "100%",
     transition: "transform .5s ease-out",
-    transform: isVisible
-      ? "none"
-      : `translate(${isRight ? Math.random() * 100 : -Math.random() * 100}px, ${
-          Math.random() * 100 - 50
-        }px)`,
+    transform: isSplit
+      ? `translate(${
+          isRight
+            ? getRandomTranslation(200, 300)
+            : -getRandomTranslation(200, 300)
+        }px, ${getRandomTranslation(-50, 50)}px)`
+      : "none", // Reset transform when not split
   });
 
   return (
