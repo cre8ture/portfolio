@@ -119,8 +119,8 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>My Next.js App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Kai Kleinbard</title>
+        <link rel="icon" href="/flower.ico" />
       </Head>
 
       <div className=""></div>
