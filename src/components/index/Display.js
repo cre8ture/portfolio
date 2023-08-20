@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useLayoutEffect, useEffect } from "react";
 import AnimatedText from "../animations/Animated_text_final";
 // import Text2 from "../animations/Animated_text";
@@ -17,21 +18,24 @@ const workingOn = "Projects and Current Research";
 const AnimatedComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(
-    window.innerWidth <= 768
+    typeof window !== "undefined" && window.innerWidth <= 768
   );
+
   useLayoutEffect(() => {
     const handleResize = () => {
-      setIsMobileOrTablet(window.innerWidth <= 768);
+      setIsMobileOrTablet(
+        typeof window !== "undefined" && window.innerWidth <= 768
+      );
     };
 
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []); // Only run this effect once during component mount
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
 
   const mission_array = mission.split("\n");
 
