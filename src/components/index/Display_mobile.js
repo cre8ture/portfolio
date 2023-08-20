@@ -21,8 +21,11 @@ const AnimatedComponent = () => {
     setIsVisible(true);
   }, []);
 
+  console.log("we in the mobile!!!")
+
   return (
     <div
+    className="MobileDisplay"
       style={{
         display: "flex",
         flexDirection: "column",
