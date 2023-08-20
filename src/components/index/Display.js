@@ -32,7 +32,9 @@ const AnimatedComponent = () => {
       window.addEventListener("resize", handleResize);
 
       return () => {
-        window.removeEventListener("resize", handleResize);
+        if (typeof window !== "undefined") {
+          window.removeEventListener("resize", handleResize);
+        }
       };
     }
   }, []);
