@@ -46,7 +46,7 @@ const AnimatedComponent = () => {
   }, []);
   // Determine if the screen width corresponds to a mobile or tablet size
   // const isMobileOrTablet = window.innerWidth <= 768; // Adjust the width threshold as needed
-  console.log("isMobileOrTablet", window.innerWidth, isMobileOrTablet);
+  // console.log("isMobileOrTablet", window.innerWidth, isMobileOrTablet);
 
   return (
     <div>
