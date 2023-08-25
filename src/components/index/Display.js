@@ -187,86 +187,88 @@ const AnimatedComponent = () => {
   return (
     <div>
       {/* Display on small screens */}
-      <div className={`hidden lg:block md:block`}>
-        {" "}
-        {/* Display on medium and large screens */}{" "}
-        {/* Display on medium and large screens */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {/* <Typing textToType={textToType} /> */}
+      {!isMobileOrTablet && (
+        <div className={`sm:hidden md:block`}>
+          {" "}
+          {/* Display on medium and large screens */}{" "}
+          {/* Display on medium and large screens */}
           <div
             style={{
-              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {/* <Typing textToType={textToType} /> */}
+            <div
+              style={{
+                position: "relative",
 
-              left: "0",
-              margin: "auto", // Corrected 'margins' to 'margin'
-              width: "100vw",
-              marginLeft: "10px",
-              background: "black",
-              fontFamily: "monospace", // Add monospace font
-              fontSize: "30px", // Set font size to 20
-              lineHeight: "1.5", // Add space beneath each line
-              padding: "10px", // Add padding for additional space between text and border
-            }}
-          >
-            <AnimatedText text={textToType} />
-          </div>
-          <br />
-          <Bio />
-          <br />
-          <div
-            style={{
-              position: "relative",
+                left: "0",
+                margin: "auto", // Corrected 'margins' to 'margin'
+                width: "100vw",
+                marginLeft: "10px",
+                background: "black",
+                fontFamily: "monospace", // Add monospace font
+                fontSize: "30px", // Set font size to 20
+                lineHeight: "1.5", // Add space beneath each line
+                padding: "10px", // Add padding for additional space between text and border
+              }}
+            >
+              <AnimatedText text={textToType} />
+            </div>
+            <br />
+            <Bio />
+            <br />
+            <div
+              style={{
+                position: "relative",
 
-              left: "0",
-              margin: "auto", // Corrected 'margins' to 'margin'
-              width: "100vw",
-              marginLeft: "10px",
-              background: "black",
-              fontFamily: "monospace", // Add monospace font
-              fontSize: "30px", // Set font size to 20
-              lineHeight: "1.5", // Add space beneath each line
-              padding: "10px", // Add padding for additional space between text and border
-            }}
-          >
-            <AnimatedText text={workingOn} />
-          </div>
-          <div
-            style={{
-              position: "relative",
-              // top: i sVisible ? "0" : "-100vh", // Starts offscreen
-              left: "0",
-              marginLeft: "100px",
-              // margin: "auto", // Corrected 'margins' to 'margin'
-              width: "100vw",
-              // height: isVisible ? "100vh" : "0", // Expands to full height
-              background: "black",
-              // transition: "top 1s, height 1s",
-              fontFamily: "monospace", // Add monospace font
-              fontSize: "25px", // Set font size to 20
-              lineHeight: "1.5", // Add space beneath each line
-              padding: "10px", // Add padding for additional space between text and border
-            }}
-          >
-            {mission_array.map((paragraph, index) => (
-              <React.Fragment key={index}>
-                <AnimatedText text={paragraph} />
-              </React.Fragment>
-            ))}
-            <br />
-            <Table />
-            <br />
-            <Footer />
+                left: "0",
+                margin: "auto", // Corrected 'margins' to 'margin'
+                width: "100vw",
+                marginLeft: "10px",
+                background: "black",
+                fontFamily: "monospace", // Add monospace font
+                fontSize: "30px", // Set font size to 20
+                lineHeight: "1.5", // Add space beneath each line
+                padding: "10px", // Add padding for additional space between text and border
+              }}
+            >
+              <AnimatedText text={workingOn} />
+            </div>
+            <div
+              style={{
+                position: "relative",
+                // top: i sVisible ? "0" : "-100vh", // Starts offscreen
+                left: "0",
+                marginLeft: "100px",
+                // margin: "auto", // Corrected 'margins' to 'margin'
+                width: "100vw",
+                // height: isVisible ? "100vh" : "0", // Expands to full height
+                background: "black",
+                // transition: "top 1s, height 1s",
+                fontFamily: "monospace", // Add monospace font
+                fontSize: "25px", // Set font size to 20
+                lineHeight: "1.5", // Add space beneath each line
+                padding: "10px", // Add padding for additional space between text and border
+              }}
+            >
+              {mission_array.map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  <AnimatedText text={paragraph} />
+                </React.Fragment>
+              ))}
+              <br />
+              <Table />
+              <br />
+              <Footer />
+            </div>
           </div>
         </div>
-      </div>
-      <MobileDisplay className={`sm:block md:hidden lg:hidden`} />{" "}
+      )}
+      {isMobileOrTablet && <MobileDisplay className={`sm:block md:hidden`} />}
     </div>
   );
 };

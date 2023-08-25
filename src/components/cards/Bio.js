@@ -1,6 +1,6 @@
+import React from "react";
 // import Bio_left from "./Bio_left";
 import Bio_left2 from "./Bio_left2";
-
 import Load_imgs from "../image/load_imgs_into_pixels";
 // import Load_imgs3 from "../image/load_imgs2";
 
